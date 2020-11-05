@@ -1,0 +1,44 @@
+<html>
+<head>
+<script>
+    function machine_choice() {
+        return (Math.floor(Math.random() * 3)+1);
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        round=playerSelection*computerSelection;
+        result=0;
+        switch (round) {
+            case 4, 10,18:
+                result="Draw";
+                break;
+            case 5,12:
+                result="User";
+            case 6,8,15:
+                result="Machine"
+        }
+    return result;
+}
+    function game() {
+        let index=0;
+        for (let i = 0; index < 5; index++) {
+            user_choice = prompt("Enter your choice");
+            user_choice.toLowerCase();
+            winner=playRound(user_choice,machine_choice());
+        }
+        
+
+    }
+</script>
+</head>
+<body>
+        <form>
+            <input type="button" 
+            onclick="game()" 
+            value="Jugar juego">
+        </form>
+   
+        </body>
+
+</html>
+
